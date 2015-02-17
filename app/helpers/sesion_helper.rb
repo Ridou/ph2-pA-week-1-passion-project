@@ -1,12 +1,11 @@
 helpers do
   def user_login(user)
     session[:id] = user.id
-    session[:start] = 0
     redirect "/home/users/#{user.id}" if current_user
   end
 
   def redirect_user
-    redirect "/home/users/#{@user.id}" if current_user
+    redirect "/home/users/#{session[:id]}" if current_user
   end
 
   def authenticate?(user)
@@ -32,10 +31,10 @@ helpers do
 
   def logout
     session.clear
-    redirect '/'
+    redirect '/login'
   end
 
   def current_user
-    @current_user ||= User.find(session[:id]) if session[:id]
+    @current_user ||= User.where(id: session[:id]) if session[:id]
   end
 end

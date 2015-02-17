@@ -39,7 +39,7 @@ nav a:hover {
 
 }
 /*Drawers*/
-.drawer-left {
+.menu-left {
   height:100%;
   display:none;
   background-color: #323949;
@@ -60,7 +60,7 @@ nav a:hover {
   box-shadow: 8px 0px 12px 0px rgba(0,0,0,0.75);
 }
 
-.drawer-right {
+.menu-right {
   height: 100%;   
   display:none;
   background-color: #323949;

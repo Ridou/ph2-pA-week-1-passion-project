@@ -1,38 +1,47 @@
-body {
-  background-image: url("../assets/classroom1.jpg");
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+/**{
+  outline: cyan solid 1px;
+}*/
 /*Content*/
 #parallax {
 	width: 100%;
 	height: 98%;
 	margin-top: 2%;
+	text-align: center;
 }
-#scroller {
+/*#scroller {
 	margin-right: 25%;
 	margin-left: 25%;
 	width: 75%;
 	height: 100%;
 	display: block;
-}
+}*/
 
 #fusion {
+	height: 400px;
 	width: 100%;
+	-webkit-box-shadow: -1px 0px 15px 5px rgba(0,0,0,0.8);
+	-moz-box-shadow: -1px 0px 15px 5px rgba(0,0,0,0.8);
+	box-shadow: -1px 0px 15px 5px rgba(0,0,0,0.8);
 }
 #main {
-	display: block;
-	width: 100%;
-	margin: auto;
+	background: transparent;
+	min-height: 400px;
+	height: 1000px;
 }
 #mountain {
-
+	background: transparent;
+	min-height: 400px;
+	height: 1000px;
+}
+#valley {
+	background: transparent;
+	min-height: 400px;
+	height: 1000px;
 }
 #river {
-
+	background: transparent;
+	min-height: 400px;
+	height: 1000px;
 }
 
 /*Profile*/

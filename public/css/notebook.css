@@ -60,10 +60,9 @@
 .notebook_container {
   text-align: center;
   background-color: black;
-  position: absolute;
   bottom: 0;
   width:100%;
-  display: inline-block;
+  display: block;
 }
 #page_left {
   margin-top: 7px;
