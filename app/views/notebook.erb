@@ -1,18 +1,58 @@
-<style>
-body {
-background-image: url("../assets/notebook.jpg");
-background-repeat: no-repeat;
-background-size: cover;
-}
-</style>
+<script src="/js/notebook.js"></script>
+<script src="/js/carousel.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <div id="notebook_wrapper">
   <div id="notebook_desk">
-    <div id="main_note" contenteditable="true">
+    <div class='notebook_container'>
+    <div class="bs-example">
+      <div id="myCarousel" class="carousel slide" data-interval="0" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <!-- DEPENDING ON THE LENGTH APPEND A CAROUSEL INDICATOR AND A SLIDE WITH INDEX AND APPEND a CLASS ITEM -->
+
+        <ol class="carousel-indicators">
+          <li class="slide active"></li>
+          <li class="slide-two"></li>
+          <li class="slide-three"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item">
+            <div class="carousel-caption">
+              <ul>
+                <li><h1 class='note_id'></h1></li>
+                <li><h1 class='title' contenteditable="true">Title</h1></li>
+                <li><h2 class='description' contenteditable="true">Description</h2></li>
+                <li><h3 class='content' contenteditable="true">Content</h3></li>
+                <li><h4 class='created_at' contenteditable="true"></h4></li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="carousel-caption">
+              <ul>
+                <li><div class='note_id'></div></li>
+                <li><div class='title' contenteditable="true"></div></li>
+                <li><div class='description' contenteditable="true"></h3></li>
+                <li><div class='content' contenteditable="true"></div></li>
+                <li><div class='created_at' contenteditable="true"></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
     </div>
-  <!-- create -->
-    <div id="create">
-      <a href="/users/<%=@notes1.user_id%>/notebook/new">
-      <!-- <img src="/../public/assets/pencil.png"/>  -->Create</a>
+  </div>
+    <!-- create -->
+    <div id="create_note">
+      <a href="/users/<%=@notes1.user_id%>/notebook/new">Create</a>
     </div>
     <!-- edit note  -->
     <div id="edit">
@@ -29,48 +69,12 @@ background-size: cover;
   </div>
   <div id='notebox' style='display: none'>
     <% @notes.each do |note|%>
-    <h1 class='note_id' style='display: none'><%=note.id%></h1>
+    <div class='note_id' style='display: none'><%=note.id%>
     <h2 class='title'><%=note.title%></h2>
     <h3 class='description'><%=note.description%></h3>
     <h4 class='content'><%=note.content%></h4>
     <h4 class='created_at'><%=note.created_at%></h4>
+    </div>
     <% end %>
-  </div>
-  <div class='notebook_container'>
-    <%= %>
-    <!-- Page Left -->
-    <div id="page_left">
-      
-    </div>
-    
-    <div id="drawer_left">
-      <ul>
-        <li><h1 class='note_id'></h1></li>
-        <li><h2 class='title'></h2></li>
-        <li><h3 class='description'></h3></li>
-        <li><h4 class='content'></h4></li>
-        <li><h4 class='created_at'></h4></li>
-      </ul>
-    </div>
-    <div id="drawer_center">
-      <ul>
-        <li><h1 class='note_id'></h1></li>
-        <li><h2 class='title'></h2></li>
-        <li><h3 class='description'></h3></li>
-        <li><h4 class='content'></h4></li>
-        <li><h4 class='created_at'></h4></li>
-      </ul>
-    </div>
-    <div id="drawer_right">
-      <ul>
-        <li><h1 class='note_id'></h1></li>
-        <li><h2 class='title'></h2></li>
-        <li><h3 class='description'></h3></li>
-        <li><h4 class='content'></h4></li>
-        <li><h4 class='created_at'></h4></li>
-      </ul>
-    </div>
-    <div id="page_right">
-    </div>
   </div>
 </div>

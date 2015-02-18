@@ -37,9 +37,13 @@ get '/logout' do
 end
 
 # Homepage
-get '/home/users/:id' do
-  @user = User.find(params[:id])
+get '/home' do
+  @user = User.find(session[:id])
   erb :home
+end
+
+get '/callback' do
+  erb :sc_callback, :layout => false
 end
 
 # delete "/users/:id/notebook/:note_id/delete" do

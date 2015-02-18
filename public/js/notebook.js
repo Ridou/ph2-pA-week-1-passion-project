@@ -1,25 +1,17 @@
 $(document).ready(function($) {
-  // LEFT Drawer
-  $('#drawer_left .note_id').replaceWith($('#notebox .note_id')[1]);
-  $('#drawer_left .title').replaceWith($('#notebox .title')[1]);
-  $('#drawer_left .description').replaceWith($('#notebox .description')[1]);
-  $('#drawer_left .content').replaceWith($('#notebox .content')[1]);
-  $('#drawer_left .created_at').replaceWith(prettify($('#notebox .created_at')[1])
-
+  // Loops for number of carousel
+  $("#notebox").children().each(function(index, value) {
+    console.log($('.note_id').length);
+    // turn length into 
+  });
+  // 
+  // for loop each note index
 // CENTER Drawer
-  $('#drawer_center .note_id').replaceWith($('#notebox .note_id')[2]);
+  $('#carousel-caption .note_id').replaceWith($('#notebox .note_id')[2]);
   $('#drawer_center .title').replaceWith($('#notebox .title')[2]);
   $('#drawer_center .description').replaceWith($('#notebox .description')[2]);
   $('#drawer_center .content').replaceWith($('#notebox .content')[2]);
   $('#drawer_center .created_at').replaceWith(prettify($('#notebox .created_at')[2].textContent));
-
-
-// RIGHT Drawer
-  $('#drawer_right .note_id').replaceWith($('#notebox .note_id')[3]);
-  $('#drawer_right .title').replaceWith($('#notebox .title')[3]);
-  $('#drawer_right .description').replaceWith($('#notebox .description')[3]);
-  $('#drawer_right .content').replaceWith($('#notebox .content')[3]);
-    $('#drawer_right .created_at').replaceWith(prettify($('#notebox .created_at')[3].textContent));
 
   // Main Content
   $('#drawer_center').clone().prependTo($('#main_note'));
@@ -35,9 +27,9 @@ $(document).ready(function($) {
     newNote();
   });
   // CREATE
-  $('#create').on('click', function(e){
+  $('#create_note').on('click', function(e){
     e.preventDefault();
-    createNote($(this).children().attr('href'));
+    createNote($(this).children()[1].href);
   });
   // DELETE
   $('#delete').on('click', function(e){
@@ -95,15 +87,17 @@ var editNote = function(route){
 
 // Create a Note:
 var createNote = function(route) {
-  var newTitle = $('#main_note').find('.title').text();
-  var newContent = $('#main_note').find('.content').text();
-  var newDescription = $('#main_note').find('.description').text();
+  var newTitle = $('#main_note').children().find('.title').text();
+  var newContent = $('#main_note').children().find('.content').text();
+  var newDescription = $('#main_note').children().find('.description').text();
   $.ajax({
     url: route,
     type: 'POST',
     data: {title: newTitle, description: newDescription, content: newContent}
   })
   .done(function(data) {
+    // clone it, add it and append it to the main object
+    // $('#drawer_center').clone().prependTo($('#drawer_left'));
     JSON.parse(data);
   })
   .fail(function() {

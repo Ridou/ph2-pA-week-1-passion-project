@@ -23,6 +23,16 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
+require "better_errors"
+require 'dotenv'
+Dotenv.load
+
+configure :development do
+  use BetterErrors::Middleware
+  BetterErrors.application_root = File.expand_path('..', __FILE__)
+end
+
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
