@@ -18,6 +18,8 @@ gem 'bcrypt'
 
 gem 'shotgun'
 
+gem 'soundcloud'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
@@ -26,6 +28,9 @@ group :test do
 end
 
 group :test, :development do
+	gem 'dotenv'
+	gem 'better_errors'
+  gem "binding_of_caller"
 	gem 'database_cleaner'
   gem 'factory_girl'
   gem 'faker'

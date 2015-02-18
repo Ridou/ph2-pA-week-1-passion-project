@@ -1,7 +1,6 @@
 # SHOW NOTE
 get '/users/:id/notebook' do
-  @start = session[:start].to_i
-  @user = User.find(params[:id])
+  @user = User.find(session[:id])
   @notes = Note.where(user_id: @user.id)
   @notes1 = @notes.first
   erb :notebook
@@ -14,7 +13,8 @@ get '/users/:id/notebook/new' do
 end
 
 post '/users/:id/notebook/new' do
-  @user = User.find(params[:id])
+  p params
+  @user = User.find(session[:id])
   @notes = Note.create(title: params["title"], description: params["description"], content: params["content"], user_id: @user.id)
   @notes.to_json
 end

@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="/css/rcarousel.css">
     <link rel="stylesheet" href="/css/homepage.css">
     <link rel="stylesheet" href="/css/notebook.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script src="/js/soundcloud.js"></script>
     <script src="/js/youtube.js"></script>
-    <script src="/js/notebook.js"></script>
     <script src="/js/application.js"></script>
     <script src="/js/parallax.js"></script>
-    <script src="/js/jquery.ui.rcarousel.js"></script>
     <title></title>
   </head>
   <body>
@@ -44,7 +44,7 @@
     <div class="omnii-header">
       <nav>
         <ul>
-          <li><a href="/home/users/<%=@user.id%>" class="logo">Logo</a></li>
+          <li><a href="/home" class="logo">Logo</a></li>
           <li><a href="#" class="open-left">Settings</a></li>
           <!-- Search Bar -->
           <li> <form class="dark">
@@ -73,6 +73,7 @@
           <li>Profile</li>
           <li><a href="/users/<%= @user.id %>/notebook">Notebook</a></li>
           <li>Friends</li>
+          <li><a href="#"><img class='scconnect' src="../../assets/soundcloud-connect.png"></li>
         </ul>
       </div>
     </div>
